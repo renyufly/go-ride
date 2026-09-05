@@ -1,4 +1,4 @@
-module ride-sharing
+module go-ride
 
 go 1.23.0
 
