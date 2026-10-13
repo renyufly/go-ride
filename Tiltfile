@@ -53,6 +53,7 @@ local_resource(
   trip_compile_cmd,
   deps=['./services/trip-service', './shared'], labels="compiles")
 
+# 当docker容器结束，自动重启
 docker_build_with_restart(
   'ride-sharing/trip-service',
   '.',

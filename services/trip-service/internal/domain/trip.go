@@ -13,9 +13,9 @@ import (
 
 type TripModel struct{
 	ID primitive.ObjectID  // 方便存储于MongoDB
-	UserID string    // 一个trip行程绑定一个User(乘客)
-	Status string
-	RideFare RideFareModel
+	UserID string    // 乘客ID，一个trip行程绑定一个User(乘客)
+	Status string   
+	RideFare *RideFareModel  // 车费model
 }
 
 // 为 仓库层(DAO) 和 服务层(业务代码) 定义接口规范
