@@ -5,6 +5,7 @@ package domain
 
 import (
 	"context"
+	"go-ride/shared/types"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
@@ -29,4 +30,6 @@ type TripService interface{
 	// 依据fare创建trip，注意传入的是pointer
 	// pointer: 修改原来的对象，而不是修改副本
 	CreateTrip(ctx context.Context, fare *RideFareModel) (*TripModel, error)
+
+	GetRoute(ctx context.Context, pickup, destination *types.Coordinate) (*types.OsrmAPIResponse, error)
 }
